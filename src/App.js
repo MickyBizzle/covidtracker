@@ -5,6 +5,7 @@ import ReactTooltip from "react-tooltip";
 import { Legend } from "./components/Legend";
 import { CountryCard } from "./components/CountryCard";
 import { BottomInfo } from "./components/BottomInfo";
+import { Help } from "./components/Help";
 
 function App() {
   const [tooltip, setTooltip] = useState("");
@@ -61,6 +62,7 @@ function App() {
           <Legend mostCases={mostCases} />
           <ReactTooltip>{tooltip}</ReactTooltip>
           <BottomInfo />
+          <Help />
           <Map
             setTooltipContent={setTooltip}
             countryData={countries}
