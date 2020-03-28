@@ -34,13 +34,18 @@ const MapChart = ({
     return "black";
   };
 
+  const height = window.innerHeight;
+  const width = window.innerWidth;
+
   return (
-    <ComposableMap
-      data-tip=""
-      height={window.innerHeight}
-      width={window.innerWidth}
-    >
-      <ZoomableGroup zoom={2}>
+    <ComposableMap data-tip="" height={height} width={width}>
+      <ZoomableGroup
+        zoom={2}
+        translateExtent={[
+          [0, 0],
+          [width, height]
+        ]}
+      >
         <Geographies geography={geoUrl}>
           {({ geographies }) =>
             geographies.map((geo) => {
