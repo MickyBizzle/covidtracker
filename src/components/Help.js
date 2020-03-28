@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Help.scss";
 
 export const Help = () => {
-  const [hovering, setHovering] = useState(false);
+  const [hovering, setHovering] = useState(true);
 
   useEffect(() => {
     setTimeout(() => {
