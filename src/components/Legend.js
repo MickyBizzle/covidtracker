@@ -17,7 +17,9 @@ export const Legend = ({ mostCases }) => {
 
   return (
     <div className="legend">
-      <div className="legendTitle">Legend</div>
+      <div className="legendTitle">
+        <span>Total Confirmed Cases</span>
+      </div>
       <div className="legendContainer">
         <div className="labels" ref={labelBar}>
           {numValues
@@ -33,6 +35,14 @@ export const Legend = ({ mostCases }) => {
           className="colorBar"
           style={{ background: `linear-gradient(to top, ${ColorValues})` }}
         ></div>
+      </div>
+      <div className="legendContainer" style={{ height: 30 }}>
+        <div className="labels" style={{ justifyContent: "center" }}>
+          <div className="label" style={{ fontSize: 14 }}>
+            No data -{" "}
+          </div>
+        </div>
+        <div className="colorBar" style={{ backgroundColor: "black" }} />
       </div>
     </div>
   );

@@ -1,0 +1,48 @@
+.card {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background-color: rgba($color: #ffffff, $alpha: 0.9);
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+
+  button {
+    pointer-events: auto;
+    align-self: flex-end;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    &:hover {
+      font-weight: bold;
+    }
+  }
+
+  .cardTitle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 30px;
+  }
+
+  .cardContent {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    .totals,
+    .new {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    p {
+      margin: 5px;
+    }
+  }
+}

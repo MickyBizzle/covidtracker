@@ -13,10 +13,6 @@ const geoUrl =
   "https://raw.githubusercontent.com/deldersveld/topojson/master/world-countries.json";
 // "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json";
 
-const handleCountryClick = (geo) => {
-  console.log(geo.properties);
-};
-
 const MapChart = ({
   setTooltipContent,
   setSelectedCountry,
@@ -55,7 +51,14 @@ const MapChart = ({
                   strokeWidth={0.05}
                   key={geo.rsmKey}
                   geography={geo}
-                  onClick={() => setSelectedCountry(normalizeCountry(name))}
+                  onClick={() =>
+                    setSelectedCountry({
+                      abr: geo.properties["Alpha-2"],
+                      data: countryData.find(
+                        (country) => country.Country === normalizeCountry(name)
+                      )
+                    })
+                  }
                   onMouseEnter={() => {
                     setTooltipContent(name);
                   }}

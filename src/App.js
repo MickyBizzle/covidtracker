@@ -3,9 +3,11 @@ import "./App.css";
 import Map from "./components/Map";
 import ReactTooltip from "react-tooltip";
 import { Legend } from "./components/Legend";
+import { CountryCard } from "./components/CountryCard";
+import { BottomInfo } from "./components/BottomInfo";
 
 function App() {
-  const [content, setContent] = useState("");
+  const [tooltip, setTooltip] = useState("");
   const [countries, setCountries] = useState([]);
   const [lastUpdated, setLastUpdated] = useState();
   const [mostCases, setMostCases] = useState();
@@ -23,10 +25,6 @@ function App() {
         return input;
     }
   };
-
-  useEffect(() => {
-    console.log(selectedCountry);
-  }, [selectedCountry]);
 
   useEffect(() => {
     fetch("https://api.covid19api.com/summary")
@@ -48,14 +46,23 @@ function App() {
     setMostCases(most);
   }, [countries, mostCases]);
 
+  const handleSelectedClear = () => {
+    setSelectedCountry();
+  };
+
   return (
     <div>
       {countries.length > 0 ? (
         <>
+          {selectedCountry ? (
+            <CountryCard {...selectedCountry} clear={handleSelectedClear} />
+          ) : null}
+
           <Legend mostCases={mostCases} />
-          <ReactTooltip>{content}</ReactTooltip>
+          <ReactTooltip>{tooltip}</ReactTooltip>
+          <BottomInfo />
           <Map
-            setTooltipContent={setContent}
+            setTooltipContent={setTooltip}
             countryData={countries}
             mostCases={mostCases}
             setSelectedCountry={setSelectedCountry}
