@@ -16,22 +16,22 @@ const Card = ({ abr, data, clear }) => {
           </div>
           <div className="cardContent">
             <div className="totals">
-              <p>{`Total Confirmed: ${data.TotalConfirmed}`}</p>
+              <p>Totals</p>
+              <p>{`Confirmed: ${data.TotalConfirmed}`}</p>
               <p
                 style={{ color: "#ff0000" }}
-              >{`Total Deaths: ${data.TotalDeaths}`}</p>
+              >{`Deaths: ${data.TotalDeaths}`}</p>
               <p
                 style={{ color: "#39b54a" }}
-              >{`Total Recovered: ${data.TotalRecovered}`}</p>
+              >{`Recovered: ${data.TotalRecovered}`}</p>
             </div>
             <div className="new">
-              <p>{`New Confirmed: ${data.NewConfirmed}`}</p>
-              <p
-                style={{ color: "#ff0000" }}
-              >{`New Deaths: ${data.NewDeaths}`}</p>
+              <p>Last 24 hours</p>
+              <p>{`Confirmed: ${data.NewConfirmed}`}</p>
+              <p style={{ color: "#ff0000" }}>{`Deaths: ${data.NewDeaths}`}</p>
               <p
                 style={{ color: "#39b54a" }}
-              >{`New Recovered: ${data.NewRecovered}`}</p>
+              >{`Recovered: ${data.NewRecovered}`}</p>
             </div>
           </div>
         </>
