@@ -16,12 +16,46 @@ function App() {
 
   const normalizeCountry = (input) => {
     switch (input) {
-      case "United States of America":
-        return "US";
-      case "Czech Republic":
-        return "Czechia";
+      case "Venezuela":
+        return "Venezuela (Bolivarian Republic)";
       case "Democratic Republic of the Congo":
-        return "Republic of the Congo";
+        return "Congo (Kinshasa)";
+      case "Russia":
+        return "Russian Federation";
+      case "Falkland Islands":
+        return "Falkland Islands (Malvinas)";
+      case "Republic of the Congo":
+        return "Congo (Brazzaville)";
+      case "United Republic of Tanzania":
+        return "Tanzania, United Republic of";
+      case "Uruguay":
+        return "Uruguay";
+      case "Republic of Serbia":
+        return "Serbia";
+      case "Macedonia":
+        return "Macedonia, Republic of";
+      case "Kosovo":
+        return "Republic of Kosovo";
+      case "Iran":
+        return "Iran, Islamic Republic of";
+      case "Syria":
+        return "Syrian Arab Republic (Syria)";
+      case "Somaliland":
+        return "Somalia";
+      case "Vietnam":
+        return "Viet Nam";
+      case "Laos":
+        return "Lao PDR";
+      case "North Korea":
+        return "Korea (North)";
+      case "South Korea":
+        return "Korea (South)";
+      case "Taiwan":
+        return "Taiwan, Republic of China";
+      case "East Timor":
+        return "Timor-Leste";
+      case "Brunei":
+        return "Brunei Darussalam";
       default:
         return input;
     }
