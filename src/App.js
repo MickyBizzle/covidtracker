@@ -56,6 +56,8 @@ function App() {
         return "Timor-Leste";
       case "Brunei":
         return "Brunei Darussalam";
+      case "Guinea Bissau":
+        return "Guinea-Bissau";
       default:
         return input;
     }
